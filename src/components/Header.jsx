@@ -1,14 +1,19 @@
-function Header() {
+function Header({ cartItemCount, onCartClick }) {
   return (
-    <div style={{
-      background:"#4a6cf7",
-      color:"white",
-      padding:"20px",
-      textAlign:"center"
-    }}>
-      <h1>🛒 QuickCart</h1>
-      <p>Your shopping app</p>
-    </div>
+    <header className="header">
+      <div className="header-content">
+        <h1>🛒 QuickCart</h1>
+
+        <button className="cart-icon-btn" onClick={onCartClick}>
+          🛒
+          {cartItemCount > 0 && (
+            <span className="cart-badge">
+              {cartItemCount}
+            </span>
+          )}
+        </button>
+      </div>
+    </header>
   );
 }
 

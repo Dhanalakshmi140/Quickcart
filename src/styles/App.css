@@ -1,0 +1,12 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.app {
+  padding: 20px;
+}
+
+.main-content {
+  margin-top: 20px;
+}

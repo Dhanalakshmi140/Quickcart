@@ -1,17 +1,22 @@
-function ProductCard({ product }) {
+function ProductCard({ product, onAddToCart }) {
   return (
-    <div style={{
-      border:"1px solid #ccc",
-      borderRadius:"10px",
-      padding:"15px",
-      textAlign:"center",
-      background:"white"
-    }}>
-      <img src={product.image} width="100%" />
+    <div className="product-card">
+      <img src={product.image} alt={product.name} />
+
       <h3>{product.name}</h3>
       <p>{product.description}</p>
-      <p><b>${product.price}</b></p>
-      <p>{product.category}</p>
+
+      <div className="product-footer">
+        <span>${product.price}</span>
+        <span>{product.category}</span>
+      </div>
+
+      <button 
+        className="add-to-cart-btn"
+        onClick={() => onAddToCart(product)}
+      >
+        Add to Cart
+      </button>
     </div>
   );
 }
